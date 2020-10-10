@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import Card from "./components/Card";
 import { getPokemon } from "./api/pokeapi";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [pokemon, setPokemon] = useState(null);
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
@@ -11,7 +13,7 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     getPokemon(searchTerm)
-      .then(({ data }) => console.log(data))
+      .then(({ data }) => setPokemon(data))
       .catch((err) => console.log(err));
   };
 
@@ -21,6 +23,7 @@ const App = () => {
         <input type="text" placeholder="Search" onChange={handleChange} />
         <button>Search</button>
       </form>
+      {pokemon && <Card pokemon={pokemon} />}
     </div>
   );
 };
