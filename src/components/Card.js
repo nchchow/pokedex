@@ -29,7 +29,10 @@ const Card = ({ pokemon }) => {
 
   return (
     <div>
-      <img src="" alt="" />
+      <img
+        src={pokemon.sprites.other["official-artwork"].front_default}
+        alt={pokemon.name}
+      />
       <p>{pokemon.name}</p>
       <p>{pokemon.height}</p>
       <p>{pokemon.weight}</p>
