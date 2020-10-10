@@ -10,7 +10,9 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getPokemon(searchTerm);
+    getPokemon(searchTerm)
+      .then(({ data }) => console.log(data))
+      .catch((err) => console.log(err));
   };
 
   return (
