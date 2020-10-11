@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Card from "./components/Card";
+import Pokeball from "./components/Pokeball";
 import { getPokemon } from "./api/pokeapi";
 
 const useStyles = makeStyles((theme) => ({
@@ -25,13 +26,18 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getPokemon(searchTerm)
-      .then(({ data }) => setPokemon(data))
-      .catch((err) => console.log(err));
+    if (!searchTerm) {
+      window.history.back();
+    } else {
+      getPokemon(searchTerm)
+        .then(setPokemon)
+        .catch((err) => console.log(err));
+    }
   };
 
   return (
     <div className="App">
+      <Pokeball />
       <form className={classes.root} onSubmit={handleSubmit}>
         <TextField
           id="standard-basic"
