@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// pokeball inspired by https://codepen.io/marabesi/pen/ENxeGg
 const Pokeball = ({ handleSubmit, handleChange }) => {
   const classes = useStyles();
   return (

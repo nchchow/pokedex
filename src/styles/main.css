@@ -14,7 +14,6 @@
 .pokeball__top {
   position: relative;
   border: 30px solid #000;
-  border-bottom: 30px solid #000;
   border-top-left-radius: 400px;
   border-top-right-radius: 400px;
   width: 400px;
@@ -31,6 +30,11 @@
   border-radius: 200px;
   background-color: #fff;
   border: 30px solid #000;
+}
+
+.pokeball .space {
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .pokeball__bottom {

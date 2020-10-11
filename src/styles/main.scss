@@ -1,3 +1,5 @@
+// pokeball inspired by https://codepen.io/marabesi/pen/ENxeGg
+
 // POKEBALL
 .container {
   display: flex;
@@ -7,16 +9,9 @@
 }
 
 .pokeball {
-  // border: 30px solid #000;
-  // border-radius: 400px;
-  // width: 400px;
-  // height: 400px;
-  // background-color: #fff;
-
   &__top {
     position: relative;
     border: 30px solid #000;
-    border-bottom: 30px solid #000;
     border-top-left-radius: 400px;
     border-top-right-radius: 400px;
     width: 400px;
@@ -38,6 +33,7 @@
   // space between top and bottom, increase to "open" pokeball
   .space {
     // height: 100px;
+    transition: 1s;
   }
 
   &__bottom {
