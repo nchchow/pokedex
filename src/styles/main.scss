@@ -1,27 +1,7 @@
+@import "./partials/reset";
+@import "./partials/base";
+@import "./partials/containers";
 @import "./partials/pokeball";
-
-// BASE
-.App {
-  position: relative;
-}
-
-// CONTAINERS
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-
-  &--absolute {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-  }
-}
 
 // CARD
 .card {
