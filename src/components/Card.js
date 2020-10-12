@@ -1,4 +1,5 @@
 import React from "react";
+import Stats from "./Stats";
 
 const Card = ({ pokemon }) => {
   const Types = ({ types }) => (
@@ -13,16 +14,6 @@ const Card = ({ pokemon }) => {
     <>
       {abilities.map((ability, i) => (
         <p key={i}>{ability.ability.name}</p>
-      ))}
-    </>
-  );
-
-  const Stats = ({ stats }) => (
-    <>
-      {stats.map((stat, i) => (
-        <p key={i}>
-          {stat.stat.name}: {stat.base_stat}
-        </p>
       ))}
     </>
   );
