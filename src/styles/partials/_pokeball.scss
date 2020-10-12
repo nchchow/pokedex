@@ -1,0 +1,41 @@
+// pokeball inspired by https://codepen.io/marabesi/pen/ENxeGg
+
+// POKEBALL
+.pokeball {
+  &__top {
+    position: relative;
+    border: 30px solid #000;
+    border-top-left-radius: 400px;
+    border-top-right-radius: 400px;
+    width: 400px;
+    height: 180px;
+    background-color: #ff1227;
+  }
+
+  &__button {
+    position: absolute;
+    top: 100px;
+    left: 95px;
+    width: 150px;
+    height: 150px;
+    border-radius: 200px;
+    background-color: #fff;
+    border: 30px solid #000;
+  }
+
+  // space between top and bottom, increase height to "open" pokeball
+  .space {
+    // height: 100px;
+    transition: 1s;
+  }
+
+  &__bottom {
+    border: 30px solid #000;
+    border-top: 0;
+    border-bottom-left-radius: 400px;
+    border-bottom-right-radius: 400px;
+    width: 400px;
+    height: 190px;
+    background-color: #fff;
+  }
+}

@@ -28,17 +28,22 @@ const Card = ({ pokemon }) => {
   );
 
   return (
-    <div>
-      <img
-        src={pokemon.sprites.other["official-artwork"].front_default}
-        alt={pokemon.name}
-      />
-      <p>{pokemon.name}</p>
-      <p>{pokemon.height}</p>
-      <p>{pokemon.weight}</p>
-      <Types types={pokemon.types} />
-      <Abilities abilities={pokemon.abilities} />
-      <Stats stats={pokemon.stats} />
+    <div className="container--absolute">
+      <div className="card">
+        <img
+          className="card__artwork"
+          src={pokemon.sprites.other["official-artwork"].front_default}
+          alt={pokemon.name}
+        />
+        <div className="card__info-wrapper">
+          <h3>{pokemon.name}</h3>
+          <p>{pokemon.height}</p>
+          <p>{pokemon.weight}</p>
+          <Types types={pokemon.types} />
+          <Abilities abilities={pokemon.abilities} />
+          <Stats stats={pokemon.stats} />
+        </div>
+      </div>
     </div>
   );
 };
