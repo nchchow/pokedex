@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // pokeball inspired by https://codepen.io/marabesi/pen/ENxeGg
-const Pokeball = ({ handleSubmit, handleChange }) => {
+const Pokeball = ({ handleSubmit, handleChange, height }) => {
   const classes = useStyles();
   return (
     <div className="container">
@@ -32,7 +32,7 @@ const Pokeball = ({ handleSubmit, handleChange }) => {
             </form>
           </div>
         </div>
-        <div className="space"></div>
+        <div className="space" style={{ height: `${height}px` }}></div>
         <div className="pokeball__bottom"></div>
       </div>
     </div>

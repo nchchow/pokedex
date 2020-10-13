@@ -6,6 +6,7 @@ import { getPokemon } from "./api/pokeapi";
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [pokemon, setPokemon] = useState(null);
+  const [height, setHeight] = useState(0);
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
@@ -17,14 +18,24 @@ const App = () => {
       window.history.back();
     } else {
       getPokemon(searchTerm)
-        .then(setPokemon)
+        .then((pokemon) => {
+          setHeight(100);
+          // delay one second for animation
+          setTimeout(() => {
+            setPokemon(pokemon);
+          }, 1000);
+        })
         .catch((err) => console.log(err));
     }
   };
 
   return (
     <div className="App">
-      <Pokeball handleSubmit={handleSubmit} handleChange={handleChange} />
+      <Pokeball
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        height={height}
+      />
 
       {pokemon && <Card pokemon={pokemon} />}
     </div>

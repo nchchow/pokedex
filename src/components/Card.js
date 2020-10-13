@@ -1,8 +1,5 @@
 import React from "react";
-import Stats from "./Stats";
-import Types from "./Types";
-import Abilities from "./Abilities";
-import { toCapitalCase } from "../util/typography";
+import CardContent from "./CardContent";
 import { typeColors } from "../util/colors";
 
 const Card = ({ pokemon }) => {
@@ -17,19 +14,7 @@ const Card = ({ pokemon }) => {
           className="card__shadow card__shadow--top"
           style={{ boxShadow: `-12px -12px 24px 6px ${typeColors[types[0]]}` }}
         ></div>
-        <img
-          className="card__artwork"
-          src={pokemon.sprites.other["official-artwork"].front_default}
-          alt={pokemon.name}
-        />
-        <div className="card__info-wrapper">
-          <h3>{toCapitalCase(pokemon.name)}</h3>
-          <p>Height: {pokemon.height * 10} cm</p>
-          <p>Weight: {pokemon.weight / 10} kg</p>
-          <Types types={pokemon.types} />
-          <Abilities abilities={pokemon.abilities} />
-          <Stats stats={pokemon.stats} />
-        </div>
+        <CardContent pokemon={pokemon} />
         <div
           className="card__shadow card__shadow--bottom"
           style={{ boxShadow: `12px 12px 24px 6px ${typeColors[types[1]]}` }}
