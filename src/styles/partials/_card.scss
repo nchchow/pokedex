@@ -24,11 +24,21 @@
   }
 
   &__artwork {
+    margin-left: 18px;
     width: 370px;
     height: 370px;
   }
 
   &__info-wrapper {
     font-size: 12px;
+  }
+
+  &__label {
+    color: rgb(123, 124, 138);
+    font-size: 10px;
+  }
+
+  &__name {
+    font-size: 18px;
   }
 }

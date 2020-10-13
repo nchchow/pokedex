@@ -13,9 +13,14 @@ const CardContent = ({ pokemon }) => {
         alt={pokemon.name}
       />
       <div className="card__info-wrapper">
-        <h3>{toCapitalCase(pokemon.name)}</h3>
-        <p>Height: {pokemon.height * 10} cm</p>
-        <p>Weight: {pokemon.weight / 10} kg</p>
+        <h3 className="card__name">{toCapitalCase(pokemon.name)}</h3>
+        <p>
+          <span className="card__label">Height: </span>
+          {pokemon.height * 10} cm
+        </p>
+        <p>
+          <span className="card__label">Weight:</span> {pokemon.weight / 10} kg
+        </p>
         <Types types={pokemon.types} />
         <Abilities abilities={pokemon.abilities} />
         <Stats stats={pokemon.stats} />

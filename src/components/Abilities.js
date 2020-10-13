@@ -3,7 +3,7 @@ import { toCapitalCase } from "../util/typography";
 
 const Abilities = ({ abilities }) => (
   <>
-    <p>Abilities:</p>
+    <p className="card__label">Abilities:</p>
     {abilities.map((ability, i) => (
       <p key={i}>{toCapitalCase(ability.ability.name)}</p>
     ))}
