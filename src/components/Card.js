@@ -1,6 +1,7 @@
 import React from "react";
 import Stats from "./Stats";
 import Types from "./Types";
+import Abilities from "./Abilities";
 import { toCapitalCase } from "../util/typography";
 import { typeColors } from "../util/colors";
 
@@ -8,15 +9,6 @@ const Card = ({ pokemon }) => {
   // set types to determine box shadow colors
   const types = pokemon.types.map((type) => type.type.name);
   if (types.length === 1) types[1] = types[0];
-
-  const Abilities = ({ abilities }) => (
-    <>
-      <p>Abilities:</p>
-      {abilities.map((ability, i) => (
-        <p key={i}>{toCapitalCase(ability.ability.name)}</p>
-      ))}
-    </>
-  );
 
   return (
     <div className="container--absolute">
