@@ -14,7 +14,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // pokeball inspired by https://codepen.io/marabesi/pen/ENxeGg
-const Pokeball = ({ handleSubmit, handleChange, height, allPokemon }) => {
+const Pokeball = ({
+  handleSubmit,
+  handleChange,
+  height,
+  allPokemon,
+  pokemon,
+}) => {
   const classes = useStyles();
   return (
     <div className="container">
@@ -26,16 +32,16 @@ const Pokeball = ({ handleSubmit, handleChange, height, allPokemon }) => {
               <Autocomplete
                 options={allPokemon}
                 freeSolo
-                getOptionLabel={(option) => option.name}
+                getOptionLabel={(option) => option.name || ""}
                 disableClearable
+                value={pokemon}
+                onChange={handleChange}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     id="standard-basic"
                     type="text"
                     label="Pokemon"
-                    onChange={handleChange}
-                    autoComplete="pikachu muk bulbasaur"
                   />
                 )}
               />

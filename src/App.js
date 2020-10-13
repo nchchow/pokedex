@@ -9,11 +9,13 @@ const App = () => {
   const [allPokemon, setAllPokemon] = useState([]);
   const [height, setHeight] = useState(0);
 
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
+  const handleChange = (e, value) => {
+    console.log(value);
+    setSearchTerm(value);
   };
 
   const handleSubmit = (e) => {
+    console.log("submit", searchTerm);
     e.preventDefault();
     e.target.reset();
     if (!searchTerm) {
@@ -55,6 +57,7 @@ const App = () => {
         handleChange={handleChange}
         height={height}
         allPokemon={allPokemon}
+        pokemon={pokemon}
       />
       {pokemon && <Card pokemon={pokemon} handleClose={handleClose} />}
     </div>
