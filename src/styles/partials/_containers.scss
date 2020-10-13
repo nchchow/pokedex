@@ -14,4 +14,10 @@
     width: 100vw;
     height: 100vh;
   }
+
+  &--mini {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
 }

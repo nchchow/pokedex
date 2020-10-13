@@ -1,5 +1,6 @@
 import React from "react";
 import CardContent from "./CardContent";
+import MiniPokeball from "./MiniPokeball";
 import { typeColors } from "../util/colors";
 
 const Card = ({ pokemon }) => {
@@ -15,6 +16,7 @@ const Card = ({ pokemon }) => {
           style={{ boxShadow: `-12px -12px 24px 6px ${typeColors[types[0]]}` }}
         ></div>
         <CardContent pokemon={pokemon} />
+        <MiniPokeball />
         <div
           className="card__shadow card__shadow--bottom"
           style={{ boxShadow: `12px 12px 24px 6px ${typeColors[types[1]]}` }}
