@@ -96,10 +96,10 @@ body {
 .pokeball__top {
   position: relative;
   border: 30px solid #000;
-  border-top-left-radius: 400px;
-  border-top-right-radius: 400px;
-  width: 400px;
-  height: 180px;
+  border-top-left-radius: 440px;
+  border-top-right-radius: 440px;
+  width: 440px;
+  height: 200px;
   background-color: #ff1227;
 }
 
@@ -113,11 +113,11 @@ body {
 
 .pokeball__button {
   position: absolute;
-  top: 100px;
-  left: 95px;
-  width: 150px;
-  height: 150px;
-  border-radius: 200px;
+  top: 110px;
+  left: 105px;
+  width: 165px;
+  height: 165px;
+  border-radius: 220px;
   background-color: #fff;
   border: 30px solid #000;
 }
@@ -139,10 +139,10 @@ body {
 .pokeball__bottom {
   border: 30px solid #000;
   border-top: 0;
-  border-bottom-left-radius: 400px;
-  border-bottom-right-radius: 400px;
-  width: 400px;
-  height: 190px;
+  border-bottom-left-radius: 440px;
+  border-bottom-right-radius: 440px;
+  width: 440px;
+  height: 215px;
   background-color: #fff;
 }
 
