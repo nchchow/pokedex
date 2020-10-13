@@ -1,12 +1,13 @@
 import React from "react";
 import Stats from "./Stats";
+import Types from "./Types";
 import { toCapitalCase } from "../util/typography";
+import { typeColors } from "../util/colors";
 
 const Card = ({ pokemon }) => {
-  const Types = ({ types }) => {
-    const type = types.map((type) => toCapitalCase(type.type.name)).join("/");
-    return <p>Type: {type}</p>;
-  };
+  // set types to determine box shadow colors
+  const types = pokemon.types.map((type) => type.type.name);
+  if (types.length === 1) types[1] = types[0];
 
   const Abilities = ({ abilities }) => (
     <>
@@ -20,6 +21,10 @@ const Card = ({ pokemon }) => {
   return (
     <div className="container--absolute">
       <div className="card">
+        <div
+          className="card__shadow card__shadow--top"
+          style={{ boxShadow: `-12px -12px 24px 6px ${typeColors[types[0]]}` }}
+        ></div>
         <img
           className="card__artwork"
           src={pokemon.sprites.other["official-artwork"].front_default}
@@ -33,6 +38,10 @@ const Card = ({ pokemon }) => {
           <Abilities abilities={pokemon.abilities} />
           <Stats stats={pokemon.stats} />
         </div>
+        <div
+          className="card__shadow card__shadow--bottom"
+          style={{ boxShadow: `12px 12px 24px 6px ${typeColors[types[1]]}` }}
+        ></div>
       </div>
     </div>
   );
