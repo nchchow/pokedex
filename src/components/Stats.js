@@ -1,5 +1,6 @@
 import React from "react";
 import { Radar } from "react-chartjs-2";
+import { toCapitalCase } from "../util/typography";
 
 const Stats = ({ stats }) => {
   const labels = [];
@@ -19,7 +20,7 @@ const Stats = ({ stats }) => {
 
   const data = stats.reduce(
     (dataObj, stat) => {
-      dataObj.labels.push(stat.stat.name);
+      dataObj.labels.push(toCapitalCase(stat.stat.name));
       dataObj.datasets[0].data.push(stat.base_stat);
       return dataObj;
     },

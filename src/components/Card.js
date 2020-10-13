@@ -1,19 +1,18 @@
 import React from "react";
 import Stats from "./Stats";
+import { toCapitalCase } from "../util/typography";
 
 const Card = ({ pokemon }) => {
-  const Types = ({ types }) => (
-    <>
-      {types.map((type, i) => (
-        <p key={i}>{type.type.name}</p>
-      ))}
-    </>
-  );
+  const Types = ({ types }) => {
+    const type = types.map((type) => toCapitalCase(type.type.name)).join("/");
+    return <p>Type: {type}</p>;
+  };
 
   const Abilities = ({ abilities }) => (
     <>
+      <p>Abilities:</p>
       {abilities.map((ability, i) => (
-        <p key={i}>{ability.ability.name}</p>
+        <p key={i}>{toCapitalCase(ability.ability.name)}</p>
       ))}
     </>
   );
@@ -27,9 +26,9 @@ const Card = ({ pokemon }) => {
           alt={pokemon.name}
         />
         <div className="card__info-wrapper">
-          <h3>{pokemon.name}</h3>
-          <p>{pokemon.height}</p>
-          <p>{pokemon.weight}</p>
+          <h3>{toCapitalCase(pokemon.name)}</h3>
+          <p>Height: {pokemon.height * 10} cm</p>
+          <p>Weight: {pokemon.weight / 10} kg</p>
           <Types types={pokemon.types} />
           <Abilities abilities={pokemon.abilities} />
           <Stats stats={pokemon.stats} />
