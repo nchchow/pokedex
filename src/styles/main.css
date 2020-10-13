@@ -132,8 +132,8 @@ body {
 }
 
 .pokeball .space {
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .pokeball__bottom {

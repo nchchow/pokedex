@@ -50,7 +50,7 @@
   // space between top and bottom, increase height to "open" pokeball
   .space {
     // height: 100px;
-    transition: 1s;
+    transition: 1s ease-in-out;
   }
 
   &__bottom {

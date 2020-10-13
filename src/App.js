@@ -25,7 +25,7 @@ const App = () => {
           // delay for animation
           setTimeout(() => {
             setPokemon(pokemon);
-          }, 800);
+          }, 1000);
         })
         .catch((err) => {
           alert(`${searchTerm} not found, try entering a real pokemon!`);
