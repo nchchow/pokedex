@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./components/Card";
 import Pokeball from "./components/Pokeball";
-import { getPokemon } from "./api/pokeapi";
+import { getPokemon, getAllPokemon } from "./api/pokeapi";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [pokemon, setPokemon] = useState(null);
+  const [allPokemon, setAllPokemon] = useState([]);
   const [height, setHeight] = useState(0);
 
   const handleChange = (e) => {
@@ -35,12 +36,25 @@ const App = () => {
     setPokemon(null);
   };
 
+  useEffect(() => {
+    getAllPokemon().then((all) =>
+      setAllPokemon(
+        all.map((pokemon) => {
+          return {
+            name: pokemon.name,
+          };
+        })
+      )
+    );
+  }, []);
+
   return (
     <div className="App">
       <Pokeball
         handleSubmit={handleSubmit}
         handleChange={handleChange}
         height={height}
+        allPokemon={allPokemon}
       />
       {pokemon && <Card pokemon={pokemon} handleClose={handleClose} />}
     </div>
