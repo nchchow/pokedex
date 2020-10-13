@@ -15,7 +15,6 @@ const App = () => {
   };
 
   const handleSubmit = (e) => {
-    console.log("submit", searchTerm);
     e.preventDefault();
     e.target.reset();
     if (!searchTerm) {
