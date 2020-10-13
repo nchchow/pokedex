@@ -19,15 +19,19 @@ const App = () => {
     if (!searchTerm) {
       window.history.back();
     } else {
+      setHeight(100);
       getPokemon(searchTerm)
         .then((pokemon) => {
-          setHeight(100);
           // delay for animation
           setTimeout(() => {
             setPokemon(pokemon);
           }, 800);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          alert(`${searchTerm} not found, try entering a real pokemon!`);
+          setHeight(0);
+        });
     }
   };
 
