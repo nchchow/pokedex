@@ -28,7 +28,6 @@ const App = () => {
           }, 800);
         })
         .catch((err) => {
-          console.log(err);
           alert(`${searchTerm} not found, try entering a real pokemon!`);
           setHeight(0);
         });
