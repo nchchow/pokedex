@@ -10,7 +10,6 @@ const App = () => {
   const [height, setHeight] = useState(0);
 
   const handleChange = (e, value) => {
-    console.log(value);
     setSearchTerm(value);
   };
 
@@ -23,10 +22,10 @@ const App = () => {
       getPokemon(searchTerm)
         .then((pokemon) => {
           setHeight(100);
-          // delay one second for animation
+          // delay for animation
           setTimeout(() => {
             setPokemon(pokemon);
-          }, 1000);
+          }, 800);
         })
         .catch((err) => console.log(err));
     }
