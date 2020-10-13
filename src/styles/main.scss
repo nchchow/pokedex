@@ -3,38 +3,4 @@
 @import "./partials/base";
 @import "./partials/containers";
 @import "./partials/pokeball";
-
-// CARD
-.card {
-  position: relative;
-  margin: 0 auto;
-  border-radius: 16px;
-  box-shadow: 0 0 0 30px #000 inset;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 750px;
-  height: 500px;
-  background: #fff;
-
-  &__shadow {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-    pointer-events: none;
-  }
-
-  &__artwork {
-    width: 370px;
-    height: 370px;
-  }
-
-  &__info-wrapper {
-    font-size: 12px;
-  }
-}
+@import "./partials/card";

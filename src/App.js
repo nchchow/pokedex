@@ -14,6 +14,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    e.target.reset();
     if (!searchTerm) {
       window.history.back();
     } else {
@@ -29,6 +30,11 @@ const App = () => {
     }
   };
 
+  const handleClose = (e) => {
+    setHeight(0);
+    setPokemon(null);
+  };
+
   return (
     <div className="App">
       <Pokeball
@@ -36,8 +42,7 @@ const App = () => {
         handleChange={handleChange}
         height={height}
       />
-
-      {pokemon && <Card pokemon={pokemon} />}
+      {pokemon && <Card pokemon={pokemon} handleClose={handleClose} />}
     </div>
   );
 };
